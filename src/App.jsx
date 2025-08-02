@@ -54,9 +54,7 @@ function App() {
           <div className='toggle-btn' >
             <button className='active-btn' >Active Task</button>
             <button className='complate-btn' >Complated</button>
-          </div>
-
-          
+          </div>          
             <TaskCard />
         </main>
       </div>
