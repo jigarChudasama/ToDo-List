@@ -8,18 +8,12 @@ function Sidebar() {
       </div>
       <div class="faq-section">
         <details class="faq-item">
-          <summary>Todo List</summary>
-          <ul>
+          <summary>Task Overview</summary>
+          <ul className="list" >
             <li>team meeting</li>
             <li>team meeting</li>
             <li>team meeting</li>
-            <li>team meeting</li>
-            <li>team meeting</li>
-            <li>team meeting</li>
-            <li>team meeting</li>
-            <li>team meeting</li>
-            <li>team meeting</li>
-            <li>team meeting</li>
+            <li>team meeting</li> 
             
           </ul>
         </details>

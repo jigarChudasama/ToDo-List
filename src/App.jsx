@@ -6,28 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
 import TaskCard from './components/TaskCard/TaskCard';
+import SearchBar from './components/SearchBar';
 
 library.add(faUser)
 
 function App() {
 
-  const [formattedDate, setFormattedDate] = useState("");
-
-  useEffect(() => {
-    const updateDate = () => {
-      const date = new Date();
-      const day = date.getDate().toString().padStart(2, '0');
-      const month = date.toLocaleString('en-US', { month: 'short' });
-      const year = date.getFullYear();
-      setFormattedDate(`${day}, ${month} ${year}`);
-    };
-
-    updateDate(); // set once on load
-
-    const interval = setInterval(updateDate, 1000 * 60); // update every minute (optional)
-    return () => clearInterval(interval); // cleanup
-  }, []);
-
+ 
 
   return (
     <div>
@@ -37,19 +22,7 @@ function App() {
 
         <main className="main-content">
 
-          <div className='search-bar'>
-            <div className='date' >
-              {formattedDate}
-            </div>
-            <div className='search-and-addList' >
-              <div className='input' >
-                <input type="text" name="search-task" placeholder='Search Task' id="" />
-              </div>
-              <div className='add-btn' >
-                <button className='btn' >add new list</button>
-              </div>
-            </div>
-          </div>
+          <SearchBar/>
 
           <div className='toggle-btn' >
             <button className='active-btn' >Active Task</button>

@@ -45,7 +45,7 @@ body {
 .main-content {
   padding: 20px;
   height: calc(100vh - 60px);
-  overflow:  unset;
+  overflow: unset;
 
 }
 
@@ -93,15 +93,16 @@ body {
 .date {
   display: flex;
   align-items: center;
-
-  font-size: 18px;
+  
+  margin-left: 15px;
+  font-size: 25px;
   line-height: 28px;
   font-weight: 600;
   color: #374151FF;
 }
 
-.add-btn .btn {
-  width: 152.53125px;
+.btn  {
+  width: 150px;
   height: 42px;
   padding: 0 12px;
   display: flex;
@@ -115,11 +116,12 @@ body {
   opacity: 1;
   border: none;
   border-radius: 8px;
-  gap: 8px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-.add-btn .btn :hover {
-  background: rgb(60, 92, 208);
+.btn:hover {
+  background-color: rgb(59, 89, 198);
 }
 
 .toggle-btn {
@@ -174,53 +176,55 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(1,minmax(0,1fr)) ;/* 3 columns */
-  gap: 16px; /* space between grid items */
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  /* 3 columns */
+  gap: 16px;
+  /* space between grid items */
   padding: 20px;
   margin: auto;
 }
 
 .grid-item {
-  width: 300px; 
-  height: 200px; 
+  width: 300px;
+  height: 200px;
   padding: 15px;
-  background: #E0E7FFFF; 
-  border-radius: 12px; 
-  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1F; 
+  background: #E0E7FFFF;
+  border-radius: 12px;
+  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1F;
 }
 
 .checkbox label {
-  font-size: 18px; 
-  line-height: 28px; 
-  font-weight: 600; 
-  color: #1F2937FF; 
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #1F2937FF;
 }
 
 .discription {
   height: 150px;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
-.Timeline{
-  font-size: 14px; 
-  line-height: 20px; 
-  font-weight: 500; 
+.Timeline {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
   color: #374151FF;
 }
 
-.img{
-   width: 32px; 
-  height: 32px; 
-  border-radius: 0px; 
+.img {
+  width: 32px;
+  height: 32px;
+  border-radius: 0px;
   display: flex;
 }
 
-.text{
-  font-size: 20px; 
-  line-height: 28px; 
-  font-weight: 600; 
-  color: #1F2937FF; 
+.text {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #1F2937FF;
 }
 
 .faq-section {
@@ -246,9 +250,103 @@ body {
 }
 
 .faq-item summary::-webkit-details-marker {
-  display: none; /* Hide default triangle in some browsers */
+  display: none;
+  /* Hide default triangle in some browsers */
 }
 
 .faq-item p {
   margin-top: 8px;
+}
+
+
+.list li {
+  list-style-type: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bol;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  position: relative;
+  width: 400px;
+  max-width: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+
+.add-task-input {
+  width: 350px;
+  height: 40px;
+  padding-left: 34px;
+  padding-right: 12px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  background: #FFFFFFFF;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: #D1D5DBFF;
+  border-style: solid;
+  outline: none;
+  margin-top: 10px;
+}
+
+.add-model-btn {
+  outline: none;
+  background: #4B73FFFF;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  margin-top: 15px;
+  width: 100px;
+  cursor: pointer;
+}
+.add-model-btn:hover{
+  background-color: rgb(59, 89, 198);
+}
+
+.cancle-model-btn {
+  outline: none;  
+  background: rgb(234, 60, 60);
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 100px  ;
+  cursor: pointer;
+}
+.cancle-model-btn:hover{
+  background: rgb(183, 45, 45);
 }
