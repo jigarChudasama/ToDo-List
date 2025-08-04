@@ -1,20 +1,29 @@
 import React from 'react';
+import { useTodo } from '../../Context/TodoContext';
 
 function Sidebar() {
+
+  const { todo } = useTodo()
+
   return (
     <aside className="sidebar bordeer-right">
       <div className='img' >
-        <img src="\icons\logo.svg" alt="" /> <span className='text' >TODO</span>
+        <img src="\icons\logo.svg" alt="" /> <span className='text' >DailyDo</span>
       </div>
-      <div class="faq-section">
-        <details class="faq-item">
+      <div className="faq-section">
+        <details className="faq-item" open >
           <summary>Task Overview</summary>
-          <ul className="list" >
-            <li>team meeting</li>
-            <li>team meeting</li>
-            <li>team meeting</li>
-            <li>team meeting</li> 
-            
+          <ul>
+            {todo.length === 0 ? (
+              <li>No tasks available</li>
+            ) : (
+              todo.map((todo) => (
+                <li key={todo.id}>
+                  {todo.title}
+                   {todo.isComplate && <span style={{ color: 'green' }}> ✔</span>}
+                </li>
+              ))
+            )}
           </ul>
         </details>
       </div>

@@ -176,10 +176,8 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  /* 3 columns */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  /* space between grid items */
   padding: 20px;
   margin: auto;
 }
@@ -198,6 +196,7 @@ body {
   line-height: 28px;
   font-weight: 600;
   color: #1F2937FF;
+  cursor: pointer;
 }
 
 .discription {
@@ -349,4 +348,85 @@ body {
 }
 .cancle-model-btn:hover{
   background: rgb(183, 45, 45);
+}
+
+input[type=checkbox]{
+  cursor: pointer;
+}
+
+.checkbox-more{
+  display: flex;
+  justify-content: space-between;
+}
+
+.more {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+
+}
+
+.more-container {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.menu-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+.devider{
+  margin-top: 10px;
+  border-bottom: 1px solid #a2a2a2;
+  width: 100%;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 300px;
+}
+.modal input, .modal textarea {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
 }

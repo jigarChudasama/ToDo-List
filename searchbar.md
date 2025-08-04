@@ -12,13 +12,17 @@ function SearchBar() {
             const day = date.getDate().toString().padStart(2, '0');
             const month = date.toLocaleString('en-US', { month: 'short' });
             const year = date.getFullYear();
-            setFormattedDate(`${day}, ${month} ${year}`);
+            const time = new Date().toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+            setFormattedDate(`${day}, ${month} ${year} , ${time}`);
         };
 
-        updateDate(); // set once on load
-
-        const interval = setInterval(updateDate, 1000 * 60); // update every minute (optional)
-        return () => clearInterval(interval); // cleanup
+        updateDate();
+        const interval = setInterval(updateDate, 1000 * 60);
+        return () => clearInterval(interval);
     }, []);
 
 
@@ -31,14 +35,18 @@ function SearchBar() {
             </div>
             <div className='search-and-addList' >
                 <div className='input' >
-                    <input type="text" name="search-task" placeholder='Search Task' id="" />
+                    <input
+                        type="text"
+                        name="search-task"
+                        placeholder='Search Task'
+                        id="" />
                 </div>
-                
-                    <button className='btn' onClick={() => {
-                        setAddTask(true)
-                    }}  >add new list</button>
-                    <AddTask open={addTask} onClose={() => setAddTask(false)} />
-                
+
+                <button className='btn' onClick={() => {
+                    setAddTask(true)
+                }}  >add new list</button>
+                <AddTask open={addTask} onClose={() => setAddTask(false)} />
+
             </div>
         </div>
     )
