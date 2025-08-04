@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTodo } from '../../Context/TodoContext'; // adjust path if needed
+import { useTodo } from '../../Context/TodoContext';
 
 function AddTask({ open, onClose }) {
   const { addTask } = useTodo();

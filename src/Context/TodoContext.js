@@ -1,12 +1,11 @@
-import { faZ } from "@fortawesome/free-solid-svg-icons";
 import { useContext , createContext } from "react";
 
 export const TodoContext = createContext({
     todo:[{
         id : 1 ,
-        title : "title",
-        discription : "discription" ,
-        duration : "hour",
+        title : " ",
+        discription : " " ,
+        duration : " ",
         isComplate : false
     }],
     addTask : (title , discription , duration ) => {},

@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
-import Sidebar from './components/Sidebar/Sidebar';
-import Header from './components/Header/Header';
-import TaskCard from './components/TaskCard/TaskCard';
 import { TodoProvider } from './Context/TodoContext';
-import AddTask from './components/model/AddTask';
+import { AddTask, Header, Sidebar, TaskCard } from './components';
 
 
 function App() {
