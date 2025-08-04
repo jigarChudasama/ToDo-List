@@ -20,7 +20,7 @@ function Sidebar() {
               todo.map((todo) => (
                 <li key={todo.id}>
                   {todo.title}
-                   {todo.isComplate && <span style={{ color: 'green' }}> ✔</span>}
+                  {todo.isComplate && <span style={{ color: 'green' }}> ✔</span>}
                 </li>
               ))
             )}

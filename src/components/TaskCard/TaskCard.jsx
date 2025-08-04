@@ -33,7 +33,7 @@ function TaskCard({ todo }) {
         <div
           className="grid-item"
           style={{
-            backgroundColor: todo.isComplate ? "#90bb90" : "#E0E7FF",
+            display: todo.isComplate ? "none" : "block",
           }}
         >
           <div className='checkbox-more'>

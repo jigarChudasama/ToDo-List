@@ -430,3 +430,9 @@ input[type=checkbox]{
   display: flex;
   justify-content: space-between;
 }
+
+.no-data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

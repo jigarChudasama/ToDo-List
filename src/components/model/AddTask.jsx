@@ -20,12 +20,10 @@ function AddTask({ open, onClose }) {
 
     addTask(title, discription, duration);
 
-    // Clear form
     setTitle('');
     setDiscription('');
     setDuration('');
 
-    // Close modal
     onClose();
   };
 

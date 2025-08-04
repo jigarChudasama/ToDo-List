@@ -8,6 +8,7 @@ function App() {
   const [todo, setTodo] = useState([])
   const [addTaskModel, setAddTaskModel] = useState(false)
   const [search, setSearch] = useState("")
+  const [formattedDate, setFormattedDate] = useState('');
 
 
   const addTask = (title, discription, duration) => {
@@ -27,6 +28,7 @@ function App() {
   const deleteTask = (id) => {
     setTodo((prev) => prev.filter((prevToDo) => prevToDo.id !== id))
   }
+
   const toggleComplate = (id) => {
     setTodo((prev) => prev.map((prevToDo) => (prevToDo.id === id ? { ...prevToDo, isComplate: !prevToDo.isComplate } : prevToDo)))
   }
@@ -43,7 +45,6 @@ function App() {
   }, [todo])
 
 
-  const [formattedDate, setFormattedDate] = useState('');
 
   useEffect(() => {
     const updateDate = () => {
@@ -60,10 +61,10 @@ function App() {
       setFormattedDate(`${day}, ${month} ${year} , ${time}`);
     };
 
-    updateDate(); // initial call
-    const interval = setInterval(updateDate, 1000); // update every second
+    updateDate(); 
+    const interval = setInterval(updateDate, 1000);
 
-    return () => clearInterval(interval); // cleanup
+    return () => clearInterval(interval); 
   }, []);
 
 
@@ -88,27 +89,30 @@ function App() {
                     onChange={(e) => setSearch(e.target.value)}
                   />
                 </div>
-
                 <button className='btn' onClick={() => {
                   setAddTaskModel(true)
-                }}  >add new list</button>
+                }}  >Add new list</button>
                 <AddTask open={addTaskModel} onClose={() => setAddTaskModel(false)} />
 
               </div>
             </div>
             <div className='devider' />
 
-                <div className="grid-container">
-            {
-              todo
-                .filter((todo) => {
-                  if (search.toLowerCase() === "") return true;
-                  return todo.title.toLowerCase().includes(search.toLowerCase());
-                })
-                .map((todo) => (
-                  <TaskCard key={todo.id} todo={todo} />
-                ))
-            }
+            <div className="grid-container">
+              {
+                todo.length == 0 ? <div>
+                  <h3 className='no-data' aria-colspan={3} >No tasks available</h3>
+                </div>
+                  :
+                  todo
+                    .filter((todo) => {
+                      if (search.toLowerCase() === "") return true;
+                      return todo.title.toLowerCase().includes(search.toLowerCase());
+                    })
+                    .map((todo) => (
+                      <TaskCard key={todo.id} todo={todo} />
+                    ))
+              }
             </div>
           </main>
         </div>
